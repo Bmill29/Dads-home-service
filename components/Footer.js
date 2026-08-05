@@ -26,7 +26,7 @@ export default function Footer() {
 
         <div>
           <p className="text-xs uppercase tracking-wide text-bone/40">Service Area</p>
-          <p className="mt-3 text-sm leading-relaxed text-bone/60">{BUSINESS.serviceAreaTowns}</p>
+          <p className="mt-3 text-sm leading-relaxed text-bone/60">Serving customers across {BUSINESS.serviceArea}.</p>
         </div>
 
         <div>
