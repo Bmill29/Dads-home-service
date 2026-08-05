@@ -19,22 +19,27 @@ export default function BeforeAfterSlider({ before, after, beforeLabel = "Before
     draggingRef.current = true;
     updateFromClientX(e.clientX);
     e.currentTarget.setPointerCapture?.(e.pointerId);
+    e.preventDefault();
   };
   const onPointerMove = (e) => {
     if (!draggingRef.current) return;
     updateFromClientX(e.clientX);
+    e.preventDefault();
   };
-  const onPointerUp = () => {
+  const onPointerUp = (e) => {
     draggingRef.current = false;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
   };
 
   return (
     <div
       ref={containerRef}
-      className="group relative aspect-[4/3] w-full select-none overflow-hidden rounded-md bg-line touch-none"
+      className="group relative aspect-[4/3] w-full cursor-ew-resize select-none touch-none overflow-hidden rounded-md bg-line"
+      style={{ touchAction: "none" }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
       onPointerLeave={onPointerUp}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,13 +70,16 @@ export default function BeforeAfterSlider({ before, after, beforeLabel = "Before
         </div>
       </div>
 
+      {/* Pointer-events disabled: dragging is handled entirely by the container's
+          pointer handlers above (works for mouse + touch). This input stays
+          purely for keyboard accessibility (arrow keys) and screen readers. */}
       <input
         type="range"
         min={0}
         max={100}
-        value={position}
+        value={Math.round(position)}
         onChange={(e) => setPosition(Number(e.target.value))}
-        className="compare-slider absolute inset-0 h-full w-full cursor-ew-resize"
+        className="compare-slider pointer-events-none absolute inset-0 h-full w-full"
         aria-label="Drag to compare before and after"
       />
     </div>
