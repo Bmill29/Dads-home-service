@@ -1,7 +1,6 @@
 "use client";
 
 import RequireRole from "@/components/RequireRole";
-import AdminNav from "@/components/admin/AdminNav";
 import { useStore } from "@/components/StoreProvider";
 
 function AvailabilityContent() {
@@ -9,16 +8,13 @@ function AvailabilityContent() {
 
   return (
     <div className="mx-auto max-w-content px-5 py-16 sm:px-8 sm:py-20">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brass">Owner Dashboard</p>
-          <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Availability</h1>
-          <p className="mt-2 max-w-lg text-sm text-ink/55">
-            Control which upcoming months customers can choose when scheduling, and cap how many jobs you'll take on
-            per month.
-          </p>
-        </div>
-        <AdminNav />
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-brass">Owner Dashboard</p>
+        <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Availability</h1>
+        <p className="mt-2 max-w-lg text-sm text-ink/55">
+          Control which upcoming months customers can choose when scheduling, and cap how many jobs you'll take on
+          per month.
+        </p>
       </div>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

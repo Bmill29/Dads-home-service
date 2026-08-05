@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import RequireRole from "@/components/RequireRole";
-import AdminNav from "@/components/admin/AdminNav";
 import { useStore } from "@/components/StoreProvider";
 import { getServiceBySlug, formatCurrency, formatDate } from "@/lib/mockData";
 
@@ -122,12 +121,9 @@ function AdminInboxContent() {
 
   return (
     <div className="mx-auto max-w-content px-5 py-16 sm:px-8 sm:py-20">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-brass">Owner Dashboard</p>
-          <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Requests</h1>
-        </div>
-        <AdminNav />
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-brass">Owner Dashboard</p>
+        <h1 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Requests</h1>
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
