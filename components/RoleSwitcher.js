@@ -19,7 +19,7 @@ export default function RoleSwitcher() {
     return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
-  const label = role === "owner" ? "Owner" : role === "customer" ? DEMO_CUSTOMER.name.split(" ")[0] : "Demo view";
+  const label = role === "owner" ? "Owner" : role === "customer" ? DEMO_CUSTOMER.name.split(" ")[0] : "Sign in";
 
   return (
     <div className="relative" ref={ref}>
@@ -32,7 +32,7 @@ export default function RoleSwitcher() {
       </button>
       {open ? (
         <div className="absolute right-0 z-50 mt-2 w-56 overflow-hidden rounded-md border border-line bg-white py-1 shadow-lg">
-          <p className="px-3 pb-1.5 pt-2 text-[11px] uppercase tracking-wide text-ink/40">Demo role switch</p>
+          <p className="px-3 pb-1.5 pt-2 text-[11px] uppercase tracking-wide text-ink/40">Continue as</p>
           <button
             className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm hover:bg-bone ${
               role === "customer" ? "text-brass" : "text-ink/80"

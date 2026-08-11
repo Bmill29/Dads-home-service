@@ -39,7 +39,7 @@ export default function QuoteWizard() {
         <p className="text-xs uppercase tracking-[0.2em] text-brass">Get a Quote</p>
         <h1 className="mt-2 font-serif text-3xl text-charcoal">Sign in to start your request</h1>
         <p className="mt-3 text-sm text-ink/55">
-          This is a demo — any email and password will sign you in as our sample customer, Sarah Thompson.
+          Sign in or create an account to submit your request and track its status.
         </p>
         <form
           className="mt-8 space-y-4"

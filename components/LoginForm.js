@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useStore } from "@/components/StoreProvider";
-import { DEMO_CUSTOMER } from "@/lib/mockData";
 
 export default function LoginForm() {
   const { setRole } = useStore();
@@ -30,9 +29,7 @@ export default function LoginForm() {
     <div className="mx-auto max-w-md px-5 py-24 sm:px-8">
       <p className="text-xs uppercase tracking-[0.2em] text-brass">Sign in</p>
       <h1 className="mt-2 font-serif text-3xl text-charcoal">Welcome back</h1>
-      <p className="mt-3 text-sm text-ink/55">
-        This is a demo login — any credentials will work. Choose which experience you'd like to view.
-      </p>
+      <p className="mt-3 text-sm text-ink/55">Sign in to manage your requests, or as the team to manage jobs.</p>
 
       <div className="mt-8 grid grid-cols-2 gap-2 rounded-full border border-line bg-white p-1">
         <button
@@ -55,9 +52,7 @@ export default function LoginForm() {
 
       {tab === "customer" ? (
         <form className="mt-8 space-y-4" onSubmit={submitCustomer}>
-          <p className="text-xs text-ink/40">
-            Signs you in as our sample customer, {DEMO_CUSTOMER.name}, with 3 jobs already on file.
-          </p>
+          <p className="text-xs text-ink/40">Sign in to view your active requests and job status.</p>
           <label className="block">
             <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/40">Email</span>
             <input
@@ -89,7 +84,7 @@ export default function LoginForm() {
         </form>
       ) : (
         <form className="mt-8 space-y-4" onSubmit={submitOwner}>
-          <p className="text-xs text-ink/40">Signs you in to the owner/admin dashboard.</p>
+          <p className="text-xs text-ink/40">Sign in to manage requests, quotes, and scheduling.</p>
           <label className="block">
             <span className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-ink/40">Email</span>
             <input

@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-bone/10 px-5 py-5 text-center text-xs text-bone/40 sm:px-8">
-        © {new Date().getFullYear()} {BUSINESS.name}. Licensed & insured. This is a demo site with mock data.
+        © {new Date().getFullYear()} {BUSINESS.name}. Licensed & insured.
       </div>
     </footer>
   );

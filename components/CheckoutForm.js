@@ -126,7 +126,6 @@ export default function CheckoutForm({ title, amount, lineItems = [], onPay, onC
             </button>
           ) : null}
         </div>
-        <p className="text-[11px] text-ink/35">Demo checkout — no real payment is processed.</p>
       </form>
     </div>
   );

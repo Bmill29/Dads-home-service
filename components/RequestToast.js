@@ -71,7 +71,7 @@ export default function RequestToast() {
               <div className="rounded-md border border-line">
                 <div className="space-y-1 border-b border-line bg-bone px-4 py-3 text-xs text-ink/60">
                   <p>
-                    <span className="text-ink/40">From:</span> notifications@dadsdemosrenovations.com
+                    <span className="text-ink/40">From:</span> notifications@cornerstonehomeservice.com
                   </p>
                   <p>
                     <span className="text-ink/40">To:</span> {BUSINESS.email}
